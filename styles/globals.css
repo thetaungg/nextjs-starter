@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 62.5%; /*1rem = 10px now*/
   word-spacing: 1px;
@@ -14,7 +14,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  min-height: 100%;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -51,10 +51,17 @@ html {
 body {
   font-size: 1.4rem;
   color: #424242;
+  height: 100%;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+/* for flex-grow: 1 to work on body div of the DefaultLayout
+  Need height: 100% on html and body tags as well
+*/
+#__next {
+  height: 100%;
 }
 

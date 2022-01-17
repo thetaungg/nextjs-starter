@@ -8,9 +8,9 @@ interface DefaultLayoutProps {
 }
 
 const DefaultLayout = (props: DefaultLayoutProps) => {
-  const { title = "My Website", children } = props;
+  const { title = "Next.js Starter", children } = props;
   return (
-    <div>
+    <div css={container}>
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,17 +19,23 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
       <div css={body}>{children}</div>
       <div css={footer}>
         <p style={{ fontSize: "1.3rem", fontWeight: 600 }}>
-          Copyright ©<span style={{ color: "#1e7d34" }}> 2021 Thet Aung.</span> All rights reserved.{" "}
+          Copyright ©<span style={{ color: "#1e7d34" }}> {new Date().getUTCFullYear()} Thet Aung.</span> All rights reserved.{" "}
         </p>
       </div>
     </div>
   );
 };
 
+const container = css`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 const body = css`
   box-sizing: inherit;
   width: 100%;
-  min-height: calc(100vh - 104px);
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 `;
