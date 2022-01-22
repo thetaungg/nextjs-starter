@@ -16,7 +16,7 @@ const RealTimeClock = () => {
   }, []);
 
   return (
-    <h5 css={styles.text} suppressHydrationWarning={true}>
+    <h5 css={styles.text} suppressHydrationWarning>
       The time is - {currentTime}
     </h5>
   );

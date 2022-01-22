@@ -1,0 +1,111 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true // enable linting for jsx files
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "assert": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "semi": true,
+        "singleQuote": false,
+        "printWidth": 110,
+        "jsxBracketSameLine": true
+      }
+    ],
+    // NextJs specific fix: suppress errors for missing 'import React' in files for nextjs
+    "camelcase": "off",
+    "react/react-in-jsx-scope": "off",
+    // NextJs specific fix: allow jsx syntax in js files
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }], //should add ".ts" if typescript project
+    "react/display-name": 1,
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "warn",
+    "no-useless-return": "off",
+    "no-var": "warn",
+    "no-shadow": "off",
+    "no-console": "warn",
+    "no-lonely-if": "off",
+    "eqeqeq": ["warn", "always", { "null": "ignore" }],
+    "no-use-before-define": "off",
+    "no-nested-ternary": "warn",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/no-unused-vars": "off", // "warn" for production
+    "@typescript-eslint/no-explicit-any": "off", // "warn" for production
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-object-literal-type-assertion": "off",
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/restrict-plus-operands": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/unbound-method": "off", // for React DND
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "": "never" // this is for solving the error that sometime appears even though we set rules for all extensions we use up above
+      }
+    ],
+    "no-trailing-spaces": "off",
+    "import/no-unresolved": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/require-default-props": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/button-has-type": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": "off", // not working well with React components
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-fragments": "off",
+    "react/jsx-uses-react": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": ["error", { "declaration": false, "assignment": false }], // to solve the conflict with prettier
+    "@typescript-eslint/no-empty-interface": "warn"
+  }
+}
