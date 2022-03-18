@@ -21,10 +21,12 @@
     "baseUrl": "",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/layouts/*": ["layouts/*"],
-      "@/interfaces/*": ["interfaces/*"],
-      "@/store/*": ["store/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/interfaces/*": ["interfaces/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/public/*": ["public/*"],
+      "@/store/*": ["store/*"],
+      "@/styles/*": ["styles/*"],
       "@/utils/*": ["utils/*"]
     },
     "types": ["node", "@emotion/react/types/css-prop"], // ** important

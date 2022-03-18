@@ -32,13 +32,13 @@
       "version": "detect"
     }
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "simple-import-sort"],
   "rules": {
     "prettier/prettier": [
       "error",
       {
         "trailingComma": "es5",
-        "tabWidth": 2,
+        "tabWidth": 4,
         "semi": true,
         "singleQuote": false,
         "printWidth": 110,
@@ -47,12 +47,6 @@
     ],
     // NextJs specific fix: suppress errors for missing 'import React' in files for nextjs
     "camelcase": "off",
-    "react/react-in-jsx-scope": "off",
-    // NextJs specific fix: allow jsx syntax in js files
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }], //should add ".ts" if typescript project
-    "react/display-name": 1,
-    "react/jsx-props-no-spreading": "off",
-    "react/no-array-index-key": "warn",
     "no-useless-return": "off",
     "no-var": "warn",
     "no-shadow": "off",
@@ -61,6 +55,8 @@
     "eqeqeq": ["warn", "always", { "null": "ignore" }],
     "no-use-before-define": "off",
     "no-nested-ternary": "warn",
+    "no-trailing-spaces": "off",
+
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/no-unused-vars": "off", // "warn" for production
     "@typescript-eslint/no-explicit-any": "off", // "warn" for production
@@ -79,20 +75,14 @@
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/ban-ts-comment": "warn",
     "@typescript-eslint/unbound-method": "off", // for React DND
-    "import/prefer-default-export": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never",
-        "": "never" // this is for solving the error that sometime appears even though we set rules for all extensions we use up above
-      }
-    ],
-    "no-trailing-spaces": "off",
-    "import/no-unresolved": "off",
+    "@typescript-eslint/no-empty-interface": "warn",
+
+    "react/react-in-jsx-scope": "off",
+    // NextJs specific fix: allow jsx syntax in js files
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }], //should add ".ts" if typescript project
+    "react/display-name": 1,
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react/require-default-props": "off",
     "react/jsx-closing-bracket-location": "off",
@@ -106,6 +96,20 @@
     "react/jsx-uses-react": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": ["error", { "declaration": false, "assignment": false }], // to solve the conflict with prettier
-    "@typescript-eslint/no-empty-interface": "warn"
+
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "": "never" // this is for solving the error that sometime appears even though we set rules for all extensions we use up above
+      }
+    ],
+    "import/no-unresolved": "off",
+    "simple-import-sort/imports": "error"
   }
 }
