@@ -11,7 +11,6 @@ const RealTimeClock = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (!process.browser) return;
         setInterval(() => {
             dispatch(onCurrentTimeChange(new Date().toLocaleTimeString()));
         }, 1000);
