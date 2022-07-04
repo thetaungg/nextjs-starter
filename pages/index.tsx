@@ -4,7 +4,7 @@ import RealTimeClock from "@/components/common/RealTimeClock/RealTimeClock.compo
 import DefaultLayout from "@/layouts/DefaultLayout";
 import NextJSLogo from "@/public/next-js-seeklogo.com.svg";
 
-export default function Home() {
+const HomePage = () => {
     return (
         <DefaultLayout>
             <div css={container}>
@@ -17,7 +17,7 @@ export default function Home() {
             </div>
         </DefaultLayout>
     );
-}
+};
 
 const container = css`
     flex-grow: 1;
@@ -41,3 +41,5 @@ const logoContainer = css`
         height: auto;
     }
 `;
+
+export default HomePage;
